@@ -7,28 +7,21 @@ public class NesteedLoop15 {
         
         for (int i = 0; i < temps.length; i++) {
             System.out.println("City: " + i);
+            double sum =0;
             for (int j = 0; j < temps[0].length; j++) {
                 System.out.print("Day " + (j + 1) + ": ");
                 temps[i][j] = scanner.nextDouble();
+                sum += temps[i][j];
             }
+            double average = sum / temps[i].length;
+            System.out.println("Average temperature for city " + i + ": " + average);
             System.out.println();
         }
 
-        for (int i = 0; i < temps.length; i++) {
-            System.out.println("City: " + (i + 1)); 
-            for (double temperature: temps[i]) {
-                System.out.print(temperature + " ");
-            }
-            System.out.println();
-        }
-
-        for (int i = 0; i < temps.length; i++) {
-            double rata2 = 0;
-            for (double temperature: temps[i]) {
-                rata2 += temperature;
-            }
-            rata2 /= temps[i].length;
-            System.out.println("Rata-rata City " + (i + 1) + ": " +rata2);
-        }
+        // for (double[] tempsCity : temps) {
+        //     for (double temperature : tempsCity) {
+        //         System.out.print(temperature + " ");
+        //     }
+        //     System.out.println();
     }
 }
