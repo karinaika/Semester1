@@ -9,13 +9,22 @@ public class Qiuz15 {
         char menu = 'y';
         do {
             int number = rand.nextInt(10) + 1;
-            boolean succes = false;
+            boolean success = false;
             do {
                 System.out.print("Tebak angka (1-10): ");
                 int answer = input.nextInt();
                 input.nextLine();
-                succes = (answer == number);
-            } while (!succes);
+                success = (answer == number);
+
+                if (answer > number) {
+                    System.out.println("Tebakan anda terlalu besar");
+                } else if (answer < number){
+                    System.out.println("Tebakan anda terlalu kecil");
+                } else {
+                    success = true;
+                    System.out.println("Selamat tebakan anda benar!");
+                }
+            } while (!success);
             System.out.print("Apakah Anda ingin mengulang permainan? (Y/T) : ");
             menu = input.next().charAt(0);
             input.nextLine();
